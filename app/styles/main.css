@@ -1,0 +1,123 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  background: linear-gradient(to top left, #000088, #0000ff);
+  height: 100vh;
+  width: 100vw;
+}
+
+.loading {
+  font-size: 3em;
+  color: #000088;
+}
+
+.glyphicon-spin {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.host {
+  max-width: 400px;
+  margin: 5vh auto;
+  background: #FFF;
+  padding: 2%;
+  min-height: 90vh;
+  position: relative;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.host ol > li {
+  font-size: 1.5em;
+  text-align: left;
+  background: #EEE;
+  margin: 0 0 1px 0;
+  padding: 5px;
+}
+
+.host header {
+  margin-bottom: 10px;
+}
+
+.buzzer {
+  max-width: 400px;
+  margin: 5vh auto;
+  background: #FFF;
+  padding: 2%;
+  min-height: 90vh;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.buzzer label > span {
+  font-size: 1em;
+  color: #999;
+  display: block;
+  padding: 5px 0;
+  text-align: left;
+}
+
+.buzzer input[type="text"] {
+  border: 1px solid #666;
+  padding: 2%;
+  font-size: 2em;
+}
+
+.buzzer-btn {
+  border: 1px solid #666;
+  border-radius: 10px;
+  font-size: 3em;
+  background: linear-gradient(to top left, #000088, #0000ff);
+  color: #DD9D5E;
+  width: 80%;
+  padding: 10px auto;
+  position: absolute;
+  right: 10%;
+  left: 10%;
+  bottom: 20px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    /*max-width: 730px;*/
+  }
+}
