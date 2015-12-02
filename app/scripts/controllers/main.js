@@ -9,5 +9,8 @@
  */
 angular.module('jeopardyBuzzerApp')
   .controller('MainCtrl', function () {
-
+    this.host = false;
+    this.hostLogin = function(e) {
+      this.host = !this.host;
+    };
   });

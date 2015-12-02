@@ -3,12 +3,13 @@
   <header>
     <button class="btn btn-lg btn-primary btn-block" ng-click="vm.reset()">Reset</button>
   </header>
-  
+
   <span ng-show="vm.loading" class="loading glyphicon glyphicon-refresh glyphicon-spin" aria-hidden="true"></span>
 
   <ol class="queue" ng-hide="vm.loading">
     <li ng-repeat="buzz in vm.buzzes">{{buzz.team}}</li>
   </ol>
+  
   <pre ng-show="vm.debug">buzzes:{{ vm.buzzes | json}}</pre>
 
 </div>

@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var firebase = new Firebase('https://jeopardybuzzer.firebaseio.com/');
 
 /**

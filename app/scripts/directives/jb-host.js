@@ -6,35 +6,28 @@
 
   function Directive() {
     var directive = {
-          restrict: 'E',
-          templateUrl: '/scripts/templates/jb-host.html',
-          scope: {
-          },
-          link: linkFunc,
-          controller: Controller,
-          controllerAs: 'vm',
-          bindToController: true
-      };
+      restrict: 'E',
+      templateUrl: 'views/jb-host.html',
+      scope: {},
+      link: function(scope, el, attr, ctrl) {},
+      controller: Controller,
+      controllerAs: 'vm',
+      bindToController: true
+    };
 
-      return directive;
-
-      function linkFunc(scope, el, attr, ctrl) {
-
-      }
+    return directive;
   }
+
   Controller.$inject = ['$firebaseArray'];
   function Controller($firebaseArray) {
     var vm = this;
 
-    var queueRef = window.firebase.child('queue');
-
-    vm.reset = _reset;
-
-    activate();
 
     function activate() {
+      var queueRef = window.firebase.child('queue');
       vm.loading = true;
       vm.debug = false;
+      vm.reset = _reset;
       vm.buzzes = $firebaseArray(queueRef);
       vm.buzzes.$loaded().then(function() {
         vm.loading = false;
@@ -46,6 +39,8 @@
         vm.buzzes.$remove(buzz);
       });
     }
+
+    activate();
   }
 
 })();

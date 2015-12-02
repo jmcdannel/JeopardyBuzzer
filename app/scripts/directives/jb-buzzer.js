@@ -6,35 +6,26 @@
 
   function Directive() {
     var directive = {
-          restrict: 'E',
-          templateUrl: '/scripts/templates/jb-buzzer.html',
-          scope: {
-          },
-          link: linkFunc,
-          controller: Controller,
-          controllerAs: 'vm',
-          bindToController: true
-      };
+      restrict: 'E',
+      templateUrl: 'views/jb-buzzer.html',
+      scope: {},
+      link: function(scope, el, attr, ctrl) {},
+      controller: Controller,
+      controllerAs: 'vm',
+      bindToController: true
+    };
 
-      return directive;
-
-      function linkFunc(scope, el, attr, ctrl) {
-
-      }
+    return directive;
   }
 
-  function Controller() {
+  Controller.$inject = ['$timeout'];
+  function Controller($timeout) {
     var vm = this;
 
-    vm.buzz = _buzz;
-
-    activate();
-
     function activate() {
-      vm.team = {
-        name: _genTemName()
-      };
-      console.log(vm);
+      vm.buzz = _buzz;
+      vm.team = { name: _genTemName() };
+      vm.isBuzzed = false;
     }
 
     function _genTemName() {
@@ -44,12 +35,15 @@
     }
 
     function _buzz() {
-      console.log('buzz clicked', arguments);
       var queueRef = window.firebase.child('queue');
-      var buzzerRef = queueRef.push().set({
+      queueRef.push().set({
         team: vm.team.name
       });
+      vm.isBuzzed = true;
+      $timeout(function() { vm.isBuzzed = false; }, 2000);
     }
+
+    activate();
   }
 
 })();

@@ -3,5 +3,5 @@
     <span>Team Name</span>
     <input type="text" ng-model="vm.team.name">
   </label>
-  <button class="buzzer-btn" ng-click="vm.buzz()">BUZZ</button>
+  <button ng-hide="vm.isBuzzed" class="buzzer-btn" ng-click="vm.buzz()">BUZZ</button>
 </div>

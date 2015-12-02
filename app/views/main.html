@@ -1,5 +1,5 @@
-
-
 <div class="row">
-  <jb-buzzer></jb-buzzer>
+  <jb-buzzer ng-hide="vm.host"></jb-buzzer>
+  <jb-host ng-show="vm.host"></jb-host>
+  <a class="host-login" ng-click="vm.hostLogin()"></a>
 </div>

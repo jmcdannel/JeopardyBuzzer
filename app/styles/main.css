@@ -23,6 +23,17 @@ body {
   width: 100vw;
 }
 
+.host-login {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  cursor: crosshair;
+}
+
 .loading {
   font-size: 3em;
   color: #000088;
@@ -113,6 +124,14 @@ body {
   right: 10%;
   left: 10%;
   bottom: 20px;
+}
+
+.buzzer-btn:hover {
+  background: linear-gradient(to top left, #0000ff, #000088);
+}
+
+.buzzer-btn:active {
+  background: #0000ff;
 }
 
 /* Responsive: Portrait tablets and up */
