@@ -13,5 +13,6 @@ var firebase = new Firebase('https://jeopardybuzzer.firebaseio.com/');
 angular
   .module('jeopardyBuzzerApp', [
     'ngAnimate',
-    'firebase'
+    'firebase',
+     'ngAudio'
   ]);

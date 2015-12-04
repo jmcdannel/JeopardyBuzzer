@@ -18,9 +18,10 @@
     return directive;
   }
 
-  Controller.$inject = ['$timeout'];
-  function Controller($timeout) {
+  Controller.$inject = ['$timeout','ngAudio'];
+  function Controller($timeout, ngAudio) {
     var vm = this;
+    var sound = ngAudio.load("audio/beep-01a.wav"); 
 
     function activate() {
       vm.buzz = _buzz;
@@ -35,6 +36,7 @@
     }
 
     function _buzz() {
+      sound.play();
       var queueRef = window.firebase.child('queue');
       queueRef.push().set({
         team: vm.team.name
